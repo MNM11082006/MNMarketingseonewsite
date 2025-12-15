@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | MN Marketing - Local SEO Services</title>
+  <meta name="description" content="Contact MN Marketing for local SEO services. We'll get back to you within 24 hours to discuss your SEO needs." />
+  <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+  
+<style>
+/* ===== CSS RESET & BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Color Palette */
+  --black: #000000;
+  --white: #FFFFFF;
+  --gray-50: #fafafa;
+  --gray-100: #f5f5f5;
+  --gray-200: #e5e5e5;
+  --gray-300: #d4d4d4;
+  --gray-400: #a3a3a3;
+  --gray-500: #737373;
+  --gray-600: #525252;
+  --gray-700: #404040;
+  --gray-800: #262626;
+  --gray-900: #171717;
+  
+  /* Accent Colors */
+  --accent: #000000;
+  --accent-dark: #000000;
+  
+  /* Status Colors */
+  --success: #059669;
+  --error: #dc2626;
+  --warning: #d97706;
+  
+  /* Layout */
+  --max-width: 1200px;
+  --container-padding: 0 1rem;
+  
+  /* Typography */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+  /* Border Radius */
+  --radius: 0.375rem;
+  --radius-lg: 0.75rem;
+  
+  /* Transitions */
+  --transition: all 0.15s ease;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  color: var(--gray-800);
+  background-color: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--container-padding);
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--black);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: -0.025em;
+}
+
+h2 {
+  font-size: 2rem;
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+  color: var(--gray-700);
+  line-height: 1.7;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--accent-dark);
+}
+
+small {
+  font-size: 0.875rem;
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-200);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 1rem 0;
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--black);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--gray-700);
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: var(--black);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: var(--accent);
+  transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: var(--gray-700);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* Mobile Menu Animation */
+.menu-toggle span.active:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle span.active:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle span.active:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+  background-color: var(--accent);
+  color: var(--white);
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+.btn.secondary {
+  background-color: var(--white);
+  color: var(--gray-800);
+  border: 1px solid var(--gray-300);
+}
+
+.btn.secondary:hover {
+  background-color: var(--gray-100);
+  border-color: var(--gray-400);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ===== CONTACT HERO ===== */
+.contact-hero {
+  text-align: center;
+  padding: 4rem 1rem 2rem;
+  background: var(--white);
+}
+
+.contact-hero h1 {
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+}
+
+.contact-hero p {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  font-size: 1.25rem;
+  color: var(--gray-600);
+}
+
+/* ===== CONTACT CONTAINER ===== */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 4rem 1rem;
+}
+
+/* ===== CONTACT FORM ===== */
+.contact-form-section {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+}
+
+.contact-form-section h2 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.contact-form-section p {
+  margin-bottom: 2rem;
+  color: var(--gray-600);
+}
+
+.contact-form {
+  margin-top: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--gray-700);
+  font-size: 0.875rem;
+}
+
+.form-group label.required::after {
+  content: ' *';
+  color: var(--error);
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: var(--transition);
+  background: var(--white);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Status Messages */
+.form-status {
+  padding: 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+  display: none;
+}
+
+.form-status.success {
+  background: #d1fae5;
+  border: 1px solid #a7f3d0;
+  color: var(--success);
+}
+
+.form-status.error {
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  color: var(--error);
+}
+
+.form-status.warning {
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  color: var(--warning);
+}
+
+/* ===== CONTACT INFO SECTION ===== */
+.contact-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info-card,
+.faq-card,
+.next-steps {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.info-card h3,
+.faq-card h3,
+.next-steps h3 {
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-detail:last-child {
+  margin-bottom: 0;
+}
+
+.detail-icon {
+  font-size: 1.25rem;
+  color: var(--accent);
+  margin-top: 0.125rem;
+}
+
+.contact-detail h4 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--black);
+}
+
+.contact-detail p {
+  margin: 0;
+  color: var(--gray-600);
+  font-size: 0.95rem;
+}
+
+.faq-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.faq-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.faq-item h4 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--black);
+}
+
+.faq-item p {
+  margin: 0;
+  color: var(--gray-600);
+  font-size: 0.95rem;
+}
+
+.next-steps ol {
+  padding-left: 1.25rem;
+}
+
+.next-steps li {
+  margin-bottom: 1rem;
+  color: var(--gray-600);
+}
+
+.next-steps li:last-child {
+  margin-bottom: 0;
+}
+
+.next-steps strong {
+  color: var(--black);
+}
+
+/* ===== CTA SECTION ===== */
+.cta {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: var(--accent);
+  color: var(--white);
+  border-radius: var(--radius-lg);
+  margin: 2rem 0;
+}
+
+.cta h2 {
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+.cta p {
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.cta .btn {
+  background: var(--white);
+  color: var(--accent);
+}
+
+.cta .btn:hover {
+  background: var(--gray-100);
+  transform: translateY(-2px);
+}
+
+.cta-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--black);
+  color: var(--white);
+  text-align: center;
+  padding: 3rem 1rem;
+  border-top: 1px solid var(--gray-800);
+}
+
+footer p {
+  color: var(--gray-400);
+  margin: 0;
+}
+
+/* ===== LOADING SPINNER ===== */
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--white);
+  animation: spin 0.8s linear infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== VISITOR COUNTER ===== */
+.visitor-counter {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-md);
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.visitor-counter i {
+  font-style: normal;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  /* Typography */
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+  
+  p {
+    font-size: 1rem;
+  }
+  
+  /* Mobile Menu */
+  .menu-toggle {
+    display: flex;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    gap: 1.5rem;
+    border-bottom: 1px solid var(--gray-200);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Contact Layout */
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+  
+  .contact-form-section,
+  .info-card,
+  .faq-card,
+  .next-steps {
+    padding: 1.5rem;
+  }
+  
+  /* CTA Actions */
+  .cta-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-actions .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  /* Visitor Counter */
+  .visitor-counter {
+    bottom: 10px;
+    right: 10px;
+    font-size: 0.75rem;
+    padding: 0.375rem 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-hero {
+    padding: 3rem 1rem 1.5rem;
+  }
+  
+  .contact-hero h1 {
+    font-size: 1.75rem;
+  }
+  
+  .contact-hero p {
+    font-size: 1.1rem;
+  }
+  
+  .cta {
+    padding: 3rem 1rem;
+  }
+}
+</style>
+</head>
+<body>
+    
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <div class="logo">MN Marketing</div>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Contact Hero -->
+  <section class="contact-hero">
+    <div class="container">
+      <h1>Get in Touch</h1>
+      <p>Fill out the form and we'll get back to you within 24 hours to discuss your local SEO needs.</p>
+    </div>
+  </section>
+
+  <!-- Contact Container -->
+  <section class="container">
+    <div class="contact-container">
+      <!-- Contact Form Section -->
+      <div class="contact-form-section" id="contact-form">
+        <h2>Contact Form</h2>
+        <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+        
+        <!-- Form Status Messages -->
+        <div class="form-status success" id="successMessage" style="display: none;">
+          ✅ Thank you! Your message has been sent. We'll contact you within 24 hours.
+        </div>
+        <div class="form-status error" id="errorMessage" style="display: none;">
+          ❌ There was an error sending your message. Please try again or email us directly.
+        </div>
+        <div class="form-status warning" id="warningMessage" style="display: none;">
+          ⚠️ Please fill in all required fields marked with *
+        </div>
+        
+        <!-- Formspree Form -->
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/mjkjbleo" method="POST" aria-label="Contact form">
+          <!-- Hidden Fields for Formspree -->
+          <input type="hidden" name="_subject" value="New Contact Form Submission from MN Marketing Website">
+          <input type="hidden" name="_replyto" id="replyToField">
+          <input type="hidden" name="_cc" value="info@mnmarketing.co.za">
+          <input type="text" name="_gotcha" style="display:none">
+          
+          <div class="form-group">
+            <label for="name" class="required">Full Name</label>
+            <input type="text" id="name" name="name" required placeholder="John Smith">
+          </div>
+          
+          <div class="form-group">
+            <label for="business" class="required">Company Name</label>
+            <input type="text" id="business" name="business" required placeholder="Your Business Name">
+          </div>
+          
+          <div class="form-group">
+            <label for="email" class="required">Business Email</label>
+            <input type="email" id="email" name="email" required placeholder="john@example.com">
+          </div>
+          
+          <div class="form-group">
+            <label for="phone" class="required">Phone Number </label>
+            <input type="tel" id="phone" name="phone" required placeholder="+27 76 123 4567">
+          </div>
+          
+          <div class="form-group">
+            <label for="website">Website (Optional)</label>
+            <input type="url" id="website" name="website" placeholder="https://yourbusiness.com">
+          </div>
+          
+          <div class="form-group">
+            <label for="city" class="required">City/Suburb</label>
+            <input type="text" id="city" name="city" required placeholder="e.g., Johannesburg, Sandton">
+          </div>
+          
+          <div class="form-group">
+            <label for="service" class="required">Select Your Package</label>
+            <select id="service" name="service" required>
+              <option value="">Choose a package</option>
+              <option value="Top 10 Ranking Package (R1,499)">Top 10 Ranking Package - Ounce off</option>
+              <option value="Top 10 Ranking Package (R1,499)">Top 10 Ranking Package -3 months</option>
+              <option value="Top 3 Ranking Package (R2,999)">Top 3 Ranking Package - Ounce off</option>
+              <option value="Top 3 Ranking Package (R2,999)">Top 3 Ranking Package - 3 months</option>
+            </select>
+          </div>
+          
+          <button type="submit" class="btn" id="submitBtn">
+            <span id="submitText">Send Message</span>
+            <span id="submitLoading" style="display: none;">
+              <span class="spinner"></span> Sending...
+            </span>
+          </button>
+        </form>
+      </div>
+      
+      <!-- Contact Info & FAQ Section -->
+      <div class="contact-info-section">
+        <div class="info-card">
+          <h3>Contact Information</h3>
+          
+          <div class="contact-detail">
+            <div class="detail-icon">📧</div>
+            <div>
+              <h4>Email</h4>
+              <p>mahdi.noorhq@gmail.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-detail">
+            <div class="detail-icon">📱</div>
+            <div>
+              <h4>Phone/WhatsApp</h4>
+              <p>+27 75 090 1381</p>
+            </div>
+          </div>
+          
+          <div class="contact-detail">
+            <div class="detail-icon">🕒</div>
+            <div>
+              <h4>Response Time</h4>
+              <p>Within 24 hours</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="faq-card">
+          <h3>FAQ</h3>
+          
+          <div class="faq-item">
+            <h4>What happens after I submit the form?</h4>
+            <p>We'll contact you within 24 hours to discuss your local SEO needs and package selection.</p>
+          </div>
+          
+          
+          
+          <div class="faq-item">
+            <h4>How does local SEO help my business?</h4>
+            <p>Local SEO helps your business appear in local search results, attracting more customers in your area and increasing your visibility online.</p>
+          </div>
+          
+         
+        </div>
+        
+        <div class="next-steps">
+          <h3>Next Steps</h3>
+          <ol>
+            <li><strong>Submit Form</strong> - Fill out the contact form</li>
+            <li><strong>We Contact You</strong> - Within 24 hours</li>
+            <li><strong>Discussion</strong> - We discuss your specific needs</li>
+            <li><strong>Get Started</strong> - Choose package and begin SEO</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2025 MN Marketing | Local SEO Services</p>
+    </div>
+  </footer>
+
+  
+  <script>
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      const spans = menuToggle.querySelectorAll('span');
+      spans.forEach(span => span.classList.toggle('active'));
+    });
+
+    document.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+          navLinks.classList.remove('active');
+        }
+      }
+    });
+
+    // ============================================
+    // Check for URL parameter to pre-select package
+    // ============================================
+    function getUrlParameter(name) {
+      name = name.replace(/[\[\]]/g, '\\$&');
+      const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+      const results = regex.exec(window.location.href);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    // Check for package parameter on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const packageParam = getUrlParameter('package');
+      const serviceSelect = document.getElementById('service');
+      
+      if (packageParam && serviceSelect) {
+        let serviceValue = '';
+        if (packageParam.toLowerCase().includes('top10') || packageParam.toLowerCase().includes('10')) {
+          serviceValue = 'Top 10 Ranking Package (R1,499)';
+        } else if (packageParam.toLowerCase().includes('top3') || packageParam.toLowerCase().includes('3')) {
+          serviceValue = 'Top 3 Ranking Package (R2,999)';
+        }
+        
+        if (serviceValue) {
+          for (let i = 0; i < serviceSelect.options.length; i++) {
+            if (serviceSelect.options[i].value === serviceValue) {
+              serviceSelect.value = serviceValue;
+              break;
+            }
+          }
+        }
+      }
+    });
+
+    // Formspree Form Handling
+    const contactForm = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+    const errorMessage = document.getElementById('errorMessage');
+    const warningMessage = document.getElementById('warningMessage');
+    const submitBtn = document.getElementById('submitBtn');
+    const submitText = document.getElementById('submitText');
+    const submitLoading = document.getElementById('submitLoading');
+    const replyToField = document.getElementById('replyToField');
+
+    // Update reply-to field when email changes
+    const emailField = document.getElementById('email');
+    emailField.addEventListener('input', function() {
+      replyToField.value = this.value;
+    });
+
+    // Form validation
+    function validateForm() {
+      const requiredFields = contactForm.querySelectorAll('[required]');
+      let isValid = true;
+      
+      requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+          isValid = false;
+          field.style.borderColor = 'var(--error)';
+        } else {
+          field.style.borderColor = '';
+        }
+      });
+      
+      const email = emailField.value.trim();
+      if (email && !isValidEmail(email)) {
+        isValid = false;
+        emailField.style.borderColor = 'var(--error)';
+      }
+      
+      return isValid;
+    }
+
+    function isValidEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+
+    function resetFormStyles() {
+      const fields = contactForm.querySelectorAll('input, select');
+      fields.forEach(field => {
+        field.style.borderColor = '';
+      });
+    }
+
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      successMessage.style.display = 'none';
+      errorMessage.style.display = 'none';
+      warningMessage.style.display = 'none';
+      
+      resetFormStyles();
+      
+      if (!validateForm()) {
+        warningMessage.style.display = 'block';
+        warningMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+      
+      submitBtn.disabled = true;
+      submitText.style.display = 'none';
+      submitLoading.style.display = 'inline';
+      
+      try {
+        const formData = new FormData(this);
+        formData.append('_website', window.location.href);
+        formData.append('_timestamp', new Date().toISOString());
+        
+        const response = await fetch(this.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+        
+        if (response.ok) {
+          successMessage.style.display = 'block';
+          successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          contactForm.reset();
+          updateVisitorCounter();
+        } else {
+          throw new Error('Form submission failed');
+        }
+      } catch (error) {
+        errorMessage.style.display = 'block';
+        errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        console.error('Form submission error:', error);
+      } finally {
+        submitBtn.disabled = false;
+        submitText.style.display = 'inline';
+        submitLoading.style.display = 'none';
+      }
+    });
+
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Chatbot Plans & Pricing | MN Marketing</title>
+  <meta name="description" content="Clear AI chatbot packages designed to save you time. Stop answering repetitive questions - let AI handle it." />
+  <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+  <style>
+    /* ===== RESET & BASE ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      /* Black & White Palette */
+      --black: #000000;
+      --white: #FFFFFF;
+      
+      /* Gray Scale */
+      --gray-50: #fafafa;
+      --gray-100: #f5f5f5;
+      --gray-200: #e5e5e5;
+      --gray-300: #d4d4d4;
+      --gray-400: #a3a3a3;
+      --gray-500: #737373;
+      --gray-600: #525252;
+      --gray-700: #404040;
+      --gray-800: #262626;
+      --gray-900: #171717;
+      
+      /* Single Accent Color */
+      --accent: #000000;
+      --accent-dark: #000000;
+      --accent-light: #e6f2ff;
+      
+      /* Layout */
+      --max-width: 1200px;
+      --section-padding: 4rem 1rem;
+      --container-padding: 0 1rem;
+      
+      /* Typography */
+      --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      
+      /* Shadows */
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      
+      /* Border Radius */
+      --radius-sm: 0.25rem;
+      --radius: 0.375rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 0.75rem;
+      
+      /* Transitions */
+      --transition: all 0.15s ease;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      color: var(--gray-800);
+      background-color: var(--white);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: var(--container-padding);
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--black);
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      letter-spacing: -0.025em;
+    }
+
+    h2 {
+      font-size: 2rem;
+      letter-spacing: -0.025em;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    h4 {
+      font-size: 1.25rem;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.125rem;
+      color: var(--gray-700);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: var(--accent-dark);
+    }
+
+    small, .text-sm {
+      font-size: 0.875rem;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 1rem 0;
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--black);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--gray-700);
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 0.5rem 0;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--black);
+    }
+
+    .nav-links a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background: var(--accent);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover:after {
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      nav .container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .nav-links {
+        gap: 1.5rem;
+      }
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-block;
+      padding: 0.875rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: var(--transition);
+      background-color: var(--accent);
+      color: var(--white);
+      line-height: 1.5;
+    }
+
+    .btn:hover {
+      background-color: var(--accent-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background-color: var(--white);
+      color: var(--gray-800);
+      border: 1px solid var(--gray-300);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--gray-100);
+      border-color: var(--gray-400);
+    }
+
+    /* ===== SERVICES PAGE ===== */
+
+    /* Services Hero */
+    .services-hero {
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+      background: var(--white);
+    }
+
+    .services-hero h1 {
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .services-hero p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      font-size: 1.25rem;
+      color: var(--gray-600);
+    }
+
+    .guarantee-badge {
+      display: inline-block;
+      background-color: var(--accent);
+      color: var(--white);
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* Currency Selector */
+    .currency-selector-container {
+      text-align: center;
+      margin: 2rem auto 3rem;
+      padding: 2rem;
+      background: var(--gray-50);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--gray-200);
+      max-width: 600px;
+    }
+
+    .currency-label {
+      display: block;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+      color: var(--black);
+      font-size: 1.1rem;
+    }
+
+    .currency-select {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border: 2px solid var(--gray-300);
+      border-radius: var(--radius);
+      background-color: var(--white);
+      color: var(--gray-800);
+      cursor: pointer;
+      transition: var(--transition);
+      min-width: 250px;
+    }
+
+    .currency-select:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+    }
+
+    /* Billing Toggle */
+    .billing-toggle-container {
+      text-align: center;
+      margin: 2rem auto 3rem;
+      padding: 2rem;
+      background: var(--gray-50);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--gray-200);
+      max-width: 600px;
+    }
+
+    .billing-toggle {
+      display: inline-flex;
+      background: var(--gray-200);
+      padding: 6px;
+      border-radius: 50px;
+      margin: 1.5rem 0;
+    }
+
+    .toggle-option {
+      padding: 14px 35px;
+      border: none;
+      background: transparent;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 50px;
+      transition: var(--transition);
+      color: var(--gray-600);
+    }
+
+    .toggle-option.active {
+      background: var(--white);
+      color: var(--black);
+      box-shadow: var(--shadow-md);
+    }
+
+    .billing-note {
+      font-size: 0.95rem;
+      color: var(--gray-600);
+      margin-top: 1rem;
+    }
+
+    .save-badge {
+      background: #059669;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    /* Pricing Container */
+    .pricing-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin: 3rem auto;
+    }
+
+    .pricing-tier {
+      background: var(--white);
+      border: 2px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 2rem;
+      position: relative;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pricing-tier:hover {
+      border-color: var(--gray-300);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    .pricing-tier.featured-tier {
+      border-color: var(--accent);
+      border-width: 2px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .tier-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: var(--white);
+      padding: 8px 24px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    /* Tier Header */
+    .tier-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 2px solid var(--gray-200);
+    }
+
+    .tier-subtitle {
+      color: var(--gray-600);
+      font-size: 1rem;
+      margin: 0.5rem 0 1.5rem;
+    }
+
+    .setup-fee {
+      background: var(--gray-50);
+      padding: 1rem;
+      border-radius: var(--radius);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .fee-label {
+      color: var(--gray-600);
+    }
+
+    .fee-amount {
+      font-weight: 700;
+      color: var(--black);
+      font-size: 1.25rem;
+    }
+
+    .fee-note {
+      color: var(--gray-600);
+      font-size: 0.9rem;
+    }
+
+    /* Payment Options */
+    .payment-options {
+      margin: 2.5rem 0;
+    }
+
+    .option-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .option-header h4 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .price-display {
+      text-align: center;
+      margin: 1.5rem 0;
+    }
+
+    .price {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--black);
+      line-height: 1;
+    }
+
+    .period {
+      color: var(--gray-600);
+      font-size: 1.1rem;
+      margin-left: 0.25rem;
+    }
+
+    .equivalent {
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+      color: #059669;
+      font-weight: 500;
+    }
+
+    .value-note {
+      text-align: center;
+      font-size: 0.875rem;
+      color: var(--gray-500);
+      margin-top: 1rem;
+    }
+
+    /* Hide annual prices by default */
+    .monthly-price {
+      display: block;
+    }
+
+    .annual-price {
+      display: none;
+    }
+
+    /* Tier Content */
+    .tier-content {
+      flex: 1;
+      margin: 2.5rem 0;
+    }
+
+    .tier-content ul {
+      list-style: none;
+      margin: 1.5rem 0;
+      padding: 0;
+    }
+
+    .tier-content li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--gray-200);
+      color: var(--gray-700);
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .tier-content li:before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .tier-content li:last-child {
+      border-bottom: none;
+    }
+
+    .tier-content li strong {
+      color: var(--black);
+    }
+
+    /* AI Models */
+    .ai-models {
+      background: var(--gray-50);
+      padding: 1rem;
+      border-radius: var(--radius);
+      margin: 1.5rem 0;
+      border: 1px solid var(--gray-200);
+    }
+
+    .ai-models h4 {
+      color: var(--black);
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .ai-models p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--gray-700);
+    }
+
+    /* Integrations */
+    .integrations {
+      margin: 2rem 0;
+    }
+
+    .integration-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0 1.5rem;
+    }
+
+    .integration-tags span {
+      background: var(--white);
+      color: var(--gray-700);
+      padding: 0.5rem 1rem;
+      border-radius: 1rem;
+      font-size: 0.875rem;
+      border: 1px solid var(--gray-300);
+      transition: var(--transition);
+    }
+
+    .integration-tags span:hover {
+      background: var(--gray-50);
+      border-color: var(--gray-400);
+    }
+
+    /* Perfect For */
+    .perfect-for {
+      background: var(--gray-50);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      margin: 2rem 0;
+      border: 1px solid var(--gray-200);
+    }
+
+    .perfect-for h4 {
+      margin-top: 0;
+    }
+
+    .perfect-for p {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    /* Tier CTA */
+    .tier-cta {
+      text-align: center;
+      margin-top: auto;
+      padding-top: 2rem;
+      border-top: 2px solid var(--gray-200);
+    }
+
+    .demo-note {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+      margin-top: 0.75rem;
+    }
+
+    /* Add-ons Section */
+    .addons-section {
+      background: var(--white);
+      padding: 4rem 1rem;
+      border-top: 1px solid var(--gray-200);
+      border-bottom: 1px solid var(--gray-200);
+      margin: 4rem 0;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 3rem;
+      color: var(--gray-600);
+    }
+
+    .addons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .addon-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 2rem;
+      transition: var(--transition);
+    }
+
+    .addon-card:hover {
+      border-color: var(--gray-300);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    .addon-card h3 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .addon-pricing {
+      background: var(--gray-50);
+      padding: 1rem;
+      border-radius: var(--radius);
+      margin: 1.5rem 0;
+      border: 1px solid var(--gray-200);
+    }
+
+    .addon-price {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--black);
+      display: block;
+    }
+
+    .addon-note {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+      display: block;
+      margin-top: 0.25rem;
+    }
+
+    .addon-features {
+      list-style: none;
+      margin-top: 1.5rem;
+    }
+
+    .addon-features li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .addon-features li:before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--gray-400);
+    }
+
+    /* Calculator */
+    .calculator {
+      background: var(--white);
+      padding: 4rem 1rem;
+      margin: 4rem 0;
+    }
+
+    .calculator h2 {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .calculator-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .calc-step {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .calc-step h3 {
+      color: var(--accent);
+    }
+
+    .calc-step p {
+      margin-bottom: 1.5rem;
+    }
+
+    .calc-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .calc-option {
+      padding: 1rem;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      font-size: 0.95rem;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .calc-option:hover {
+      background: var(--gray-100);
+      border-color: var(--gray-300);
+    }
+
+    .calc-option.active {
+      background: var(--accent-light);
+      border-color: var(--accent);
+    }
+
+    .time-savings {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .saving {
+      padding: 1rem;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+    }
+
+    .saving strong {
+      font-size: 1.5rem;
+      color: var(--accent);
+      display: block;
+    }
+
+    .saving span {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+
+    .roi-display {
+      background: var(--accent-light);
+      padding: 1.5rem;
+      border: 2px solid var(--accent);
+      border-radius: var(--radius);
+      margin: 1.5rem 0;
+    }
+
+    .roi-display strong {
+      font-size: 1.75rem;
+      color: var(--black);
+      display: block;
+    }
+
+    .roi-display span {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      display: block;
+      margin-top: 0.5rem;
+    }
+
+    .roi-note {
+      font-size: 0.875rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Services Guarantee */
+    .services-guarantee {
+      background: var(--white);
+      border: 2px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 3rem;
+      margin: 4rem 0;
+    }
+
+    .services-guarantee h2 {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .guarantee-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .guarantee-step {
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: var(--accent);
+      color: var(--white);
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Process Section */
+    .process {
+      background: var(--white);
+      padding: 4rem 1rem;
+    }
+
+    .process h2 {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .step {
+      text-align: center;
+      padding: 2rem;
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--gray-200);
+      transition: var(--transition);
+    }
+
+    .step:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .step h3 {
+      color: var(--accent);
+    }
+
+    /* CTA Section */
+    .cta {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: var(--accent);
+      color: var(--white);
+      border-radius: var(--radius);
+      margin: 4rem 0;
+    }
+
+    .cta h2 {
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    .cta p {
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    .cta .btn {
+      background: var(--white);
+      color: var(--accent);
+    }
+
+    .cta .btn:hover {
+      background: var(--gray-100);
+      transform: translateY(-2px);
+    }
+
+    .cta-note {
+      margin-top: 2rem;
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+      padding: 3rem 1rem;
+      border-top: 1px solid var(--gray-800);
+    }
+
+    footer p {
+      color: var(--gray-400);
+      margin: 0;
+    }
+
+    .footer-note {
+      font-size: 0.875rem;
+      margin-top: 1rem;
+      color: var(--gray-500);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      :root {
+        --section-padding: 3rem 1rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      h2 {
+        font-size: 1.75rem;
+      }
+      
+      h3 {
+        font-size: 1.25rem;
+      }
+      
+      p {
+        font-size: 1rem;
+      }
+      
+      .pricing-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .billing-toggle {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+      }
+      
+      .toggle-option {
+        width: 100%;
+        text-align: center;
+      }
+      
+      .price {
+        font-size: 2rem;
+      }
+      
+      .currency-select,
+      .currency-selector-container,
+      .billing-toggle-container {
+        width: 100%;
+        max-width: 100%;
+      }
+      
+      .addons-grid,
+      .calculator-grid,
+      .guarantee-details,
+      .process-steps {
+        grid-template-columns: 1fr;
+      }
+      
+      .services-guarantee {
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <div class="logo">MN Marketing</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Simple Hero -->
+  <section class="services-hero">
+    <div class="container">
+      <h1>One Proven Local SEO Service. Two Clear Paths Forward.</h1>
+      <p>We deliver the same complete system to build your local authority. Choose the ambition and investment level that fits your goal.</p>
+    </div>
+  </section>
+
+  <!-- Unified Service & Pricing -->
+  <section class="container">
+    <div class="pricing-container">
+
+      <!-- Top 10 Package -->
+      <div class="pricing-tier">
+        <div class="tier-header">
+          <h2>Top 10 Ranking</h2>
+          <p class="tier-subtitle">Goal: Page 1 Visibility</p>
+          <p class="tier-goal"><strong>I want to get found consistently on the first page.</strong></p>
+        </div>
+
+        <div class="payment-options">
+          <div class="payment-option">
+            <h4>Pay in Full</h4>
+            <div class="price-display">
+              <span class="price">R1,499</span>
+            </div>
+            <a href="contact.html" class="btn-secondary">Choose This Plan</a>
+          </div>
+          <div class="payment-option highlighted">
+            <h4>3-Month Plan</h4>
+            <div class="price-display">
+              <span class="price">R500</span>
+              <span class="period">/month for 3 months</span>
+              <div class="value-note"><small>Total: R1,499</small></div>
+            </div>
+            <a href="contact.html" class="btn">Choose This Plan</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top 3 Package -->
+      <div class="pricing-tier featured-tier">
+        <div class="tier-badge">Maximum Impact</div>
+        <div class="tier-header">
+          <h2>Top 3 Ranking</h2>
+          <p class="tier-subtitle">Goal: Market Domination</p>
+          <p class="tier-goal"><strong>I want to dominate and get the most calls.</strong></p>
+        </div>
+
+        <div class="payment-options">
+          <div class="payment-option">
+            <h4>Pay in Full</h4>
+            <div class="price-display">
+              <span class="price">R2,999</span>
+            </div>
+            <a href="contact.html" class="btn-secondary">Choose This Plan</a>
+          </div>
+          <div class="payment-option highlighted">
+            <h4>3-Month Plan</h4>
+            <div class="price-display">
+              <span class="price">R1,000</span>
+              <span class="period">/month for 3 months</span>
+              <div class="value-note"><small>Total: R2,999</small></div>
+            </div>
+            <a href="contact.html" class="btn">Choose This Plan</a>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- End pricing-container -->
+
+    <!-- Unified Service Details - Applies to BOTH packages -->
+    <div class="unified-service-details">
+      <h3>Your Complete Local SEO System Includes:</h3>
+      <div class="service-features">
+        <div class="feature-column">
+          <h4>✓ Foundation & Optimization</h4>
+          <ul>
+            <li>Google Business Profile Complete Optimization</li>
+            <li>50+ Local Citation Buildout & Cleanup</li>
+            <li>Core Keyword & Competitor Analysis</li>
+          </ul>
+        </div>
+        <div class="feature-column">
+          <h4>✓ Growth & Management</h4>
+          <ul>
+            <li>On-Page SEO Recommendations</li>
+            <li>Monthly Ranking & Visibility Reports</li>
+            <li>Dedicated Strategy & Support</li>
+          </ul>
+        </div>
+      </div>
+      <p class="service-note"><strong>Both packages include the full service above.</strong> The Top 3 package carries a stronger performance commitment for its higher ranking goal.</p>
+    </div>
+
+  </section>
+
+  <!-- Final CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to Get Started?</h2>
+      <p>Tell us about your business. We'll recommend the best path to reach your local customers.</p>
+      <a href="contact.html" class="btn">Begin Your Local SEO</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 MN Marketing | Local SEO Services</p>
+    </div>
+  </footer>
+
+  <script>
+    // Simple animation for pricing cards
+    function animateOnScroll() {
+      const elements = document.querySelectorAll('.pricing-tier, .unified-service-details');
+      elements.forEach(el => {
+        const pos = el.getBoundingClientRect().top;
+        if (pos < window.innerHeight / 1.3) {
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }
+      });
+    }
+    // Set initial hidden state
+    document.querySelectorAll('.pricing-tier, .unified-service-details').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    });
+    // Trigger
+    window.addEventListener('scroll', animateOnScroll);
+    setTimeout(animateOnScroll, 100);
+  </script>
+
+</body>
+</html>
