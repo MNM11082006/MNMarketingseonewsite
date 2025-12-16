@@ -335,31 +335,7 @@ nav .container {
   box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
-/* Form Status Messages */
-.form-status {
-  padding: 1rem;
-  border-radius: var(--radius);
-  margin-bottom: 1.5rem;
-  display: none;
-}
 
-.form-status.success {
-  background: #d1fae5;
-  border: 1px solid #a7f3d0;
-  color: var(--success);
-}
-
-.form-status.error {
-  background: #fee2e2;
-  border: 1px solid #fecaca;
-  color: var(--error);
-}
-
-.form-status.warning {
-  background: #fef3c7;
-  border: 1px solid #fde68a;
-  color: var(--warning);
-}
 
 /* ===== CONTACT INFO SECTION ===== */
 .contact-info-section {
@@ -681,24 +657,11 @@ footer p {
         <h2>Contact Form</h2>
         <p>Fill out the form below and we'll get back to you within 24 hours.</p>
         
-        <!-- Form Status Messages -->
-        <div class="form-status success" id="successMessage" style="display: none;">
-          ✅ Thank you! Your message has been sent. We'll contact you within 24 hours.
-        </div>
-        <div class="form-status error" id="errorMessage" style="display: none;">
-          ❌ There was an error sending your message. Please try again or email us directly.
-        </div>
-        <div class="form-status warning" id="warningMessage" style="display: none;">
-          ⚠️ Please fill in all required fields marked with *
-        </div>
+     
         
         <!-- Formspree Form -->
         <form class="contact-form" id="contactForm" action="https://formspree.io/f/mjkjbleo" method="POST" aria-label="Contact form">
-          <!-- Hidden Fields for Formspree -->
-          <input type="hidden" name="_subject" value="New Contact Form Submission from MN Marketing Website">
-          <input type="hidden" name="_replyto" id="replyToField">
-          <input type="hidden" name="_cc" value="tanjirouzumaki82@gmail.com">
-          <input type="text" name="_gotcha" style="display:none">
+          
           
           <div class="form-group">
             <label for="name" class="required">Full Name</label>
@@ -841,159 +804,14 @@ footer p {
       }
     });
 
-    // ============================================
-    // Check for URL parameter to pre-select package
-    // ============================================
-    function getUrlParameter(name) {
-      name = name.replace(/[\[\]]/g, '\\$&');
-      const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
-      const results = regex.exec(window.location.href);
-      if (!results) return null;
-      if (!results[2]) return '';
-      return decodeURIComponent(results[2].replace(/\+/g, ' '));
-    }
+    
+    
 
-    // Check for package parameter on page load
-    document.addEventListener('DOMContentLoaded', function() {
-      const packageParam = getUrlParameter('package');
-      const serviceSelect = document.getElementById('service');
-      
-      if (packageParam && serviceSelect) {
-        let serviceValue = '';
-        if (packageParam.toLowerCase().includes('top10') || packageParam.toLowerCase().includes('10')) {
-          serviceValue = 'Top 10 Ranking Package (R1,499)';
-        } else if (packageParam.toLowerCase().includes('top3') || packageParam.toLowerCase().includes('3')) {
-          serviceValue = 'Top 3 Ranking Package (R2,999)';
-        }
-        
-        if (serviceValue) {
-          for (let i = 0; i < serviceSelect.options.length; i++) {
-            if (serviceSelect.options[i].value === serviceValue) {
-              serviceSelect.value = serviceValue;
-              break;
-            }
-          }
-        }
-      }
-    });
+    
 
-    // Formspree Form Handling
-    const contactForm = document.getElementById('contactForm');
-    const successMessage = document.getElementById('successMessage');
-    const errorMessage = document.getElementById('errorMessage');
-    const warningMessage = document.getElementById('warningMessage');
-    const submitBtn = document.getElementById('submitBtn');
-    const submitText = document.getElementById('submitText');
-    const submitLoading = document.getElementById('submitLoading');
-    const replyToField = document.getElementById('replyToField');
+    
 
-    // Update reply-to field when email changes
-    const emailField = document.getElementById('email');
-    emailField.addEventListener('input', function() {
-      replyToField.value = this.value;
-    });
-
-    // Form validation
-    function validateForm() {
-      const requiredFields = contactForm.querySelectorAll('[required]');
-      let isValid = true;
-      
-      requiredFields.forEach(field => {
-        if (!field.value.trim()) {
-          isValid = false;
-          field.style.borderColor = 'var(--error)';
-        } else {
-          field.style.borderColor = '';
-        }
-      });
-      
-      const email = emailField.value.trim();
-      if (email && !isValidEmail(email)) {
-        isValid = false;
-        emailField.style.borderColor = 'var(--error)';
-      }
-      
-      return isValid;
-    }
-
-    function isValidEmail(email) {
-      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return re.test(email);
-    }
-
-    function resetFormStyles() {
-      const fields = contactForm.querySelectorAll('input, select');
-      fields.forEach(field => {
-        field.style.borderColor = '';
-      });
-    }
-
-    contactForm.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      
-      successMessage.style.display = 'none';
-      errorMessage.style.display = 'none';
-      warningMessage.style.display = 'none';
-      
-      resetFormStyles();
-      
-      if (!validateForm()) {
-        warningMessage.style.display = 'block';
-        warningMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        return;
-      }
-      
-      submitBtn.disabled = true;
-      submitText.style.display = 'none';
-      submitLoading.style.display = 'inline';
-      
-      try {
-        const formData = new FormData(this);
-        formData.append('_website', window.location.href);
-        formData.append('_timestamp', new Date().toISOString());
-        
-        const response = await fetch(this.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        });
-        
-        if (response.ok) {
-          successMessage.style.display = 'block';
-          successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          contactForm.reset();
-          updateVisitorCounter();
-        } else {
-          throw new Error('Form submission failed');
-        }
-      } catch (error) {
-        errorMessage.style.display = 'block';
-        errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        console.error('Form submission error:', error);
-      } finally {
-        submitBtn.disabled = false;
-        submitText.style.display = 'inline';
-        submitLoading.style.display = 'none';
-      }
-    });
-
-
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
+   
   </script>
 </body>
-
 </html>
