@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Website Development | MN Marketing</title>
+  <meta name="description" content="Custom website development with built-in search engine optimization. Professional websites designed to attract customers and grow your business." />
+  <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+  <style>
+    /* ===== RESET & BASE ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      /* Color Palette */
+      --black: #000000;
+      --white: #FFFFFF;
+      --gray-50: #fafafa;
+      --gray-100: #f5f5f5;
+      --gray-200: #e5e5e5;
+      --gray-300: #d4d4d4;
+      --gray-400: #a3a3a3;
+      --gray-500: #737373;
+      --gray-600: #525252;
+      --gray-700: #404040;
+      --gray-800: #262626;
+      --gray-900: #171717;
+      
+      /* Accent Colors */
+      --accent: #000000;
+      --accent-dark: #000000;
+      
+      /* Layout */
+      --max-width: 1200px;
+      --container-padding: 0 1rem;
+      
+      /* Typography */
+      --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      
+      /* Shadows */
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+      
+      /* Border Radius */
+      --radius: 0.375rem;
+      --radius-lg: 0.75rem;
+      
+      /* Transitions */
+      --transition: all 0.15s ease;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      color: var(--gray-800);
+      background-color: var(--white);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: var(--container-padding);
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--black);
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      letter-spacing: -0.025em;
+    }
+
+    h2 {
+      font-size: 2rem;
+      letter-spacing: -0.025em;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    h4 {
+      font-size: 1.25rem;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.125rem;
+      color: var(--gray-700);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: var(--accent-dark);
+    }
+
+    small {
+      font-size: 0.875rem;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 1rem 0;
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--black);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--gray-700);
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 0.5rem 0;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--black);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background: var(--accent);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-block;
+      padding: 0.875rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: center;
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: var(--transition);
+      background-color: var(--accent);
+      color: var(--white);
+      line-height: 1.5;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: var(--accent-dark);
+      transform: translateY(-1px);
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+      background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
+    }
+
+    .hero h1 {
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      font-size: 1.25rem;
+      color: var(--gray-600);
+    }
+
+    .value-proposition {
+      background: var(--accent);
+      color: var(--white);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      margin: 2rem auto;
+      max-width: 800px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .value-proposition h3 {
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    /* ===== SERVICE OVERVIEW ===== */
+    .service-overview {
+      max-width: 900px;
+      margin: 3rem auto;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 2px solid var(--accent);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .service-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .service-header h2 {
+      color: var(--accent);
+      font-size: 2.2rem;
+    }
+
+    .service-tagline {
+      font-size: 1.3rem;
+      color: var(--gray-600);
+      margin-top: 0.5rem;
+    }
+
+    .consultation-approach {
+      text-align: center;
+      margin: 2rem 0 3rem;
+      padding: 1.5rem;
+      background: var(--gray-50);
+      border-radius: var(--radius);
+      border: 2px dashed var(--gray-300);
+    }
+
+    .consultation-approach h3 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    /* ===== FEATURES SECTIONS ===== */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .feature-section {
+      margin: 3rem 0;
+    }
+
+    .feature-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: var(--transition);
+      height: 100%;
+    }
+
+    .feature-card:hover {
+      border-color: var(--gray-300);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .feature-card h3 {
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      font-size: 1.2rem;
+    }
+
+    /* ===== SEO ADVANTAGE SECTION ===== */
+    .seo-advantage {
+      background: var(--gray-50);
+      padding: 3rem 2rem;
+      border-radius: var(--radius-lg);
+      margin: 3rem 0;
+      border: 1px solid var(--gray-200);
+    }
+
+    .seo-advantage h2 {
+      text-align: center;
+      color: var(--accent);
+      margin-bottom: 2.5rem;
+    }
+
+    .advantage-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .advantage-item {
+      background: var(--white);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--gray-200);
+    }
+
+    .advantage-item h4 {
+      color: var(--black);
+      margin-bottom: 0.75rem;
+    }
+
+    /* ===== STANDARD INCLUSIONS ===== */
+    .standard-inclusions {
+      list-style: none;
+      margin: 2rem 0;
+    }
+
+    .standard-inclusions li {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--gray-200);
+      padding-left: 2rem;
+      position: relative;
+      color: var(--gray-700);
+    }
+
+    .standard-inclusions li:before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .standard-inclusions li:last-child {
+      border-bottom: none;
+    }
+
+    .standard-inclusions li strong {
+      color: var(--black);
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: var(--accent);
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      margin: 4rem 0;
+    }
+
+    .cta h2 {
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    .cta p {
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    .cta .btn {
+      background: var(--white);
+      color: var(--accent);
+    }
+
+    .cta .btn:hover {
+      background: var(--gray-100);
+      transform: translateY(-2px);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+      padding: 3rem 1rem;
+      border-top: 1px solid var(--gray-800);
+    }
+
+    footer p {
+      color: var(--gray-400);
+      margin: 0;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      h2 {
+        font-size: 1.75rem;
+      }
+      
+      h3 {
+        font-size: 1.25rem;
+      }
+      
+      p {
+        font-size: 1rem;
+      }
+      
+      .service-card {
+        padding: 2rem 1.5rem;
+      }
+      
+      .features-grid,
+      .advantage-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .cta {
+        padding: 3rem 1rem;
+      }
+      
+      nav .container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .nav-links {
+        gap: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <div class="logo">MN Marketing</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="services-website.html">Website Development</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Professional Website Development</h1>
+      <p>Get a custom-built website designed to attract customers and grow your business. Built with our expertise to perform well in search results.</p>
+      
+      <div class="value-proposition">
+        <h3>Why Choose Us?</h3>
+        <p><span style="color: white;">We don't just build websites - we build marketing tools that work. Our websites are designed with visibility in mind, so you get a beautiful site that actually gets found by customers.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Overview -->
+  <section class="container service-overview">
+    <div class="service-card">
+      <div class="service-header">
+        <h2>Custom Website Solutions</h2>
+        <p class="service-tagline">Tailored to your business goals with our professional expertise</p>
+      </div>
+
+      <div class="consultation-approach">
+        <h3>Personalized Service</h3>
+        <p>Every business is unique. We provide custom quotes based on your specific needs and goals. Contact us for a detailed proposal.</p>
+      </div>
+
+      <!-- Core Features -->
+      <div class="feature-section">
+        <h3 class="text-center">What We Build:</h3>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">📱</div>
+            <h3>Responsive Design</h3>
+            <p>Websites that work perfectly on all devices - desktop, tablet, and mobile.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Fast Performance</h3>
+            <p>Optimized for speed to keep visitors engaged and improve user experience.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📧</div>
+            <h3>Lead Capture</h3>
+            <p>Contact forms and systems designed to convert visitors into customers.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEO Advantage -->
+      <div class="seo-advantage">
+        <h2>Built with Visibility in Mind</h2>
+        <div class="advantage-grid">
+          <div class="advantage-item">
+            <h4>Google-Friendly Design</h4>
+            <p>Built following best practices that search engines prefer.</p>
+          </div>
+          <div class="advantage-item">
+            <h4>Local Visibility Focus</h4>
+            <p>Designed to help local businesses attract nearby customers.</p>
+          </div>
+          <div class="advantage-item">
+            <h4>Mobile Optimization</h4>
+            <p>Critical for modern search rankings and user experience.</p>
+          </div>
+          <div class="advantage-item">
+            <h4>Professional Foundation</h4>
+            <p>A solid technical foundation that supports future growth and marketing.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Standard Inclusions -->
+      <div class="feature-section">
+        <h3 class="text-center">What's Included:</h3>
+        <ul class="standard-inclusions">
+          <li><strong>Custom Design</strong> tailored to your brand</li>
+          <li><strong>Mobile Responsive</strong> layout for all devices</li>
+          <li><strong>Contact System</strong> for customer inquiries</li>
+          <li><strong>Professional Setup</strong> following best practices</li>
+          <li><strong>Google Integration</strong> with essential tools</li>
+          <li><strong>Social Media</strong> connection and linking</li>
+          <li><strong>Hosting Guidance</strong> and setup assistance</li>
+          <li><strong>Custom Timeline</strong> based on your needs</li>
+          <li><strong>Project Management</strong> with regular updates</li>
+          <li><strong>Launch Support</strong> to ensure smooth go-live</li>
+          <li><strong>Basic Training</strong> on managing your site</li>
+        </ul>
+      </div>
+
+      <!-- Consultation CTA -->
+      <div class="text-center" style="margin-top: 3rem;">
+        <a href="contact.html?service=Website+Development" class="btn" style="padding: 1rem 3rem; font-size: 1.2rem;">
+          Discuss Your Project
+        </a>
+        <p style="margin-top: 1rem; color: var(--gray-600);">
+          We'll review your needs and provide a custom proposal
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Process -->
+  <section class="container" style="margin: 4rem auto; max-width: 800px;">
+    <h2 class="text-center">How We Work</h2>
+    <div class="features-grid" style="margin-top: 2rem;">
+      <div class="feature-card">
+        <div class="feature-icon">1️⃣</div>
+        <h3>We Listen</h3>
+        <p>We start by understanding your business, goals, and vision for your online presence.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">2️⃣</div>
+        <h3>We Plan</h3>
+        <p>We create a tailored plan and proposal based on your specific requirements.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">3️⃣</div>
+        <h3>We Build</h3>
+        <p>We develop your website with regular check-ins and opportunities for feedback.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ready for a Website That Works Harder?</h2>
+      <p>Get a professional website built with the expertise to help you attract customers and grow your business.</p>
+      <a href="contact.html?service=Website+Development" class="btn">Start Your Project</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 MN Marketing | Professional Website Development</p>
+    </div>
+  </footer>
+</body>
+</html>
