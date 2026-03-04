@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Onboarding · Info sheet</title>
+
+<style>
+/* modern reset / mobile first */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  padding: 20px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+h2 {
+  margin-top: 30px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1e1e1e;
+  border-left: 4px solid #000;
+  padding-left: 12px;
+}
+
+textarea, input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: 1px solid #bbb;
+  font-size: 1rem;
+  background: #fff;
+  transition: border 0.2s;
+}
+
+textarea:focus, input:focus {
+  border-color: #000;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+}
+
+button {
+  margin-top: 24px;
+  padding: 16px 14px;
+  width: 100%;
+  background: #000;         /* pure black */
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:hover {
+  background: #222;
+}
+
+button:active {
+  background: #444;
+  transform: scale(0.98);
+}
+
+.info-box {
+  margin-top: 40px;
+  background: #f9fafc;
+  padding: 24px;
+  border-radius: 16px;
+  display: none;
+  border: 1px solid #e0e0e0;
+}
+
+.info-box h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 8px;
+  border-left: none;
+  padding-left: 0;
+}
+
+#infoContent {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 5px solid #000;
+  font-family: 'Courier New', monospace;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin-bottom: 20px;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05rem;
+  margin: 20px 0 12px;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  accent-color: #000;
+}
+
+/* mobile fine‑tuning */
+@media (max-width: 600px) {
+  body {
+    padding: 12px;
+  }
+  .container {
+    padding: 20px;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 24px;
+  }
+  textarea, input {
+    padding: 14px;
+    font-size: 1rem;
+  }
+  button {
+    padding: 18px 14px;
+    font-size: 1.2rem;
+  }
+  .info-box {
+    padding: 18px;
+  }
+  label {
+    font-size: 1rem;
+  }
+  input[type="checkbox"] {
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    padding: 16px;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>📋 Client Onboarding Form</h1>
+<p>Fill in your details below. You'll be able to review and send them via WhatsApp.</p>
+
+<form id="onboardingForm">
+
+  <!-- Personal details -->
+  <h2>👤 Personal</h2>
+  <input type="text" id="firstName" placeholder="First name *" required>
+  <input type="text" id="surname" placeholder="Surname *" required>
+  <input type="email" id="email" placeholder="Email address *" required>
+  <input type="tel" id="phone" placeholder="Phone number *" required>
+
+  <!-- Company / address -->
+  <h2>🏢 Company & location</h2>
+  <input type="text" id="company" placeholder="Company name *" required>
+  <input type="text" id="address" placeholder="Street address *" required>
+  <input type="text" id="city" placeholder="City *" required>
+  <input type="text" id="province" placeholder="Province / Region / State *" required>
+  <input type="text" id="zip" placeholder="ZIP / Postal code *" required>
+
+  <!-- Account security -->
+  <h2>🔐 Account</h2>
+  <input type="password" id="password" placeholder="Password *" required>
+  <small style="display: block; margin-top: 4px; color: #555;">We'll include it in the info sheet (only for your records).</small>
+
+  <button type="button" onclick="generateInfoSheet()">📄 Review information</button>
+
+</form>
+
+<!-- Info sheet (hidden until review) -->
+<div class="info-box" id="infoBox">
+  <h2>📋 Client information sheet</h2>
+  <div id="infoContent"></div>
+
+  <label>
+    <input type="checkbox" id="confirm">
+    I confirm that the above information is correct.
+  </label>
+
+  <button onclick="sendViaWhatsApp()">📲 Send via WhatsApp</button>
+</div>
+
+</div>
+
+<script>
+
+function generateInfoSheet() {
+  // get all field values
+  let firstName = document.getElementById('firstName').value.trim();
+  let surname = document.getElementById('surname').value.trim();
+  let email = document.getElementById('email').value.trim();
+  let phone = document.getElementById('phone').value.trim();
+  let company = document.getElementById('company').value.trim();
+  let address = document.getElementById('address').value.trim();
+  let city = document.getElementById('city').value.trim();
+  let province = document.getElementById('province').value.trim();
+  let zip = document.getElementById('zip').value.trim();
+  let password = document.getElementById('password').value;  // password not trimmed to preserve spaces if any, but usually no.
+
+  // required check (all fields mandatory)
+  if (!firstName || !surname || !email || !phone || !company || !address || !city || !province || !zip || !password) {
+    alert("Please fill in all required fields.");
+    return;
+  }
+
+  // simple email validation (optional but user friendly)
+  if (!email.includes('@') || !email.includes('.')) {
+    alert("Please enter a valid email address.");
+    return;
+  }
+
+  // build summary text
+  let summary = `
+🧾 CLIENT INFORMATION SHEET
+══════════════════════════
+
+👤 PERSONAL
+First name     : ${firstName}
+Surname        : ${surname}
+Email          : ${email}
+Phone          : ${phone}
+
+🏢 COMPANY & ADDRESS
+Company        : ${company}
+Street address : ${address}
+City           : ${city}
+Province/State : ${province}
+Postal code    : ${zip}
+
+🔐 ACCOUNT
+Password       : ${password}   (keep confidential)
+`;
+
+  document.getElementById("infoContent").innerText = summary;
+  document.getElementById("infoBox").style.display = "block";
+  document.getElementById('infoBox').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function sendViaWhatsApp() {
+  if (!document.getElementById("confirm").checked) {
+    alert("Please confirm that the information is correct.");
+    return;
+  }
+
+  // get values again (could also reuse from previous, but safe to refetch)
+  let firstName = document.getElementById('firstName').value.trim();
+  let surname = document.getElementById('surname').value.trim();
+  let email = document.getElementById('email').value.trim();
+  let phone = document.getElementById('phone').value.trim();
+  let company = document.getElementById('company').value.trim();
+  let address = document.getElementById('address').value.trim();
+  let city = document.getElementById('city').value.trim();
+  let province = document.getElementById('province').value.trim();
+  let zip = document.getElementById('zip').value.trim();
+  let password = document.getElementById('password').value;
+
+  let message = `
+📋 *CLIENT ONBOARDING DATA*
+
+*Personal*
+First name: ${firstName}
+Surname: ${surname}
+Email: ${email}
+Phone: ${phone}
+
+*Company & location*
+Company: ${company}
+Address: ${address}
+City: ${city}
+Province/State: ${province}
+ZIP: ${zip}
+
+*Account password* (confidential)
+Password: ${password}
+
+-- Sent via onboarding form
+`;
+
+  // Replace with your WhatsApp number (international digits only, no '+')
+  let whatsappNumber = "27750901381";  // <-- updated (no plus)
+  let url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
+  window.open(url, "_blank");
+}
+
+</script>
+
+</body>
+</html>
